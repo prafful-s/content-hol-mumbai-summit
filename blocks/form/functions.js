@@ -6,7 +6,11 @@
  * @return {string}
  */
 function getFullName(firstname, lastname) {
-  return 'Full Name';
+    const globals= arguments[arguments.length-1];    
+    firstname=(firstname==null)?"":firstname;
+    lastname=(lastname==null)?"":lastname;
+    console.log(globals);
+    return firstname.concat(' ').concat(lastname);
 }
 
 /**
