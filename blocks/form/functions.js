@@ -49,10 +49,10 @@ function days(endDate, startDate) {
   * @return {string}
 */
 function calculateAge(field) {
-  var dob = new Date(field);
-  var now = new Date();
-  var age = now.getFullYear() - dob.getFullYear();
-  var monthDiff = now.getMonth() - dob.getMonth();
+  let dob = new Date(field);
+  const now = new Date();
+  let age = now.getFullYear() - dob.getFullYear();
+  let monthDiff = now.getMonth() - dob.getMonth();
   if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) {
     age--;
   }
