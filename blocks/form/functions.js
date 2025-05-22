@@ -42,5 +42,22 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+/**
+  * Calculates Age
+  * @name calculateAge
+  * @param {object} field
+  * @return {string}
+*/
+function calculateAge(field) {
+  var dob = new Date(field);
+  var now = new Date();
+  var age = now.getFullYear() - dob.getFullYear();
+  var monthDiff = now.getMonth() - dob.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) {
+    age--;
+  }
+  return age;
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString };
+export { getFullName, days, submitFormArrayToString, calculateAge };
