@@ -593,7 +593,7 @@ export default async function decorate(block) {
   let form;
   if (formDef) {
     const submitProps = formDef?.properties?.['fd:submit'];
-    const actionType = submitProps?.actionName || formDef?.properties?.actionType;
+    const actionType = submitProps?.actionName || submitProps?.actionType || formDef?.properties?.actionType ;
     const spreadsheetUrl = submitProps?.spreadsheet?.spreadsheetUrl
       || formDef?.properties?.spreadsheetUrl;
 
