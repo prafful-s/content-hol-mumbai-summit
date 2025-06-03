@@ -31,7 +31,7 @@ function submitFormArrayToString(globals) {
  */
 function days(endDate, startDate) {
   const start = typeof startDate === 'string' ? new Date(startDate) : startDate;
-  const end = typeof endDate === 'string' ? new Date(endDate) : endDate;
+  const end = new Date();
 
   // return zero if dates are valid
   if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
